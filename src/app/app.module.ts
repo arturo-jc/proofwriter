@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TextBoxComponent } from './text-box/text-box.component';
+import { InputTextareaModule } from 'primeng-lts/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TextBoxComponent } from './text-box/text-box.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

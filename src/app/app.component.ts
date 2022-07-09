@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'logic-shortcuts';
+
+  symbols = {
+    'NOT': '˜',
+    'AND': '∧ ',
+    'OR': '∨ ',
+    'THEN': '⊃ ',
+    'IFF': '≡ '
+  };
 }

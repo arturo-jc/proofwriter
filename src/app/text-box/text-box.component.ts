@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-text-box',
@@ -8,24 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class TextBoxComponent implements OnInit {
 
   content: string;
-  symbols;
+  @Input() symbols;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.symbols = {
-      'NOT': '˜',
-      'AND': '∧ ',
-      'OR': '∨ ',
-      'THEN': '⊃ ',
-      'IFF': '≡ '
-    };
   }
 
   onInput(): void {
     setTimeout(() => {
       this.content = this.replaceShortcuts(this.content);
-    }, 300);
+    }, 200);
   }
 
   replaceShortcuts(text: string): string {
