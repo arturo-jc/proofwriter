@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
 
   // SETTINGS
   updateAfterSelect = true;
+  caseInsensitive = true;
 
   operators: Operator[] = [
     {

@@ -9,6 +9,7 @@ export class TextBoxComponent implements OnInit {
 
   content: string;
   @Input() dictionary;
+  @Input() caseInsensitive: boolean;
   currentDictionary;
 
   constructor() { }
@@ -25,7 +26,7 @@ export class TextBoxComponent implements OnInit {
 
   substituteSymbols(text: string): string {
     const replacement = text.replace(/not|and|or|then|iff|some|all|pos|nec/gi, match => {
-      const symbol = this.dictionary[match.toLowerCase()];
+      const symbol = this.caseInsensitive? this.dictionary[match.toLowerCase()]: this.dictionary[match];
       if (!symbol) { return match; }
       return symbol;
     });
