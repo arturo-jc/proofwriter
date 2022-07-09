@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { TextBoxComponent } from './text-box/text-box.component';
 
 interface Operator {
   name: string;
@@ -12,6 +13,11 @@ interface Operator {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  @ViewChild('textBox') textBox: TextBoxComponent;
+
+  // SETTINGS
+  updateAfterSelect = true;
+
   operators: Operator[] = [
     {
       name: 'negation',
@@ -69,4 +75,12 @@ export class AppComponent implements OnInit {
       this.dictionary[operator.abbreviation] = operator.symbols[0];
     })
   }
+
+  onSymbolSelect(){
+    if (this.updateAfterSelect){
+      this.textBox.updateSymbols();
+    }
+  }
+
+  // Update textbox's current dictionary if settings change
 }

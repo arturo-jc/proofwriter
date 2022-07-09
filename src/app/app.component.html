@@ -1,7 +1,7 @@
 <div class="p-grid p-ai-stretch vertical-container">
     <div class="p-col-12 p-md-6">
         <p-card [style]="{'height': '100%'}" header="ProofWriter">
-            <app-text-box [dictionary]="dictionary"></app-text-box>
+            <app-text-box #textBox [dictionary]="dictionary"></app-text-box>
         </p-card>
     </div>
     <div class="p-col-12 p-md-6">
@@ -19,7 +19,7 @@
                         <td>{{ operator.name | titlecase }}</td>
                         <td>{{ operator.abbreviation }}</td>
                         <td *ngIf="operator.symbols.length > 1">
-                            <p-dropdown [options]="operator.symbols" [(ngModel)]="dictionary[operator.abbreviation]"></p-dropdown>
+                            <p-dropdown [options]="operator.symbols" [(ngModel)]="dictionary[operator.abbreviation]" (onChange)="onSymbolSelect()"></p-dropdown>
                         </td>
                         <td *ngIf="!(operator.symbols.length > 1)">
                             {{ operator.symbols[0] }}

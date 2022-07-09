@@ -9,10 +9,12 @@ export class TextBoxComponent implements OnInit {
 
   content: string;
   @Input() dictionary;
+  currentDictionary;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.currentDictionary = {...this.dictionary};
   }
 
   onInput(): void {
@@ -28,6 +30,17 @@ export class TextBoxComponent implements OnInit {
       return symbol;
     });
     return replacement;
+  }
+
+  updateSymbols(): void {
+    if (!this.content || !this.content.trim().length) { return; };
+    Object.keys(this.currentDictionary).forEach(key => {
+      if (this.currentDictionary[key] !== this.dictionary[key]){
+        this.content = this.content.replace(this.currentDictionary[key], this.dictionary[key]);
+        this.currentDictionary[key] = this.dictionary[key];
+        return;
+      }
+    });
   }
 
 }
