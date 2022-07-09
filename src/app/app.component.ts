@@ -84,6 +84,4 @@ export class AppComponent implements OnInit {
     };
     this.textBox.updateDictionary();
   }
-
-  // Update textbox's current dictionary if settings change
 }

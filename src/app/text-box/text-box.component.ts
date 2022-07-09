@@ -1,4 +1,6 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, Input, OnInit } from '@angular/core';
+import { MessageService } from 'primeng-lts/api';
 
 @Component({
   selector: 'app-text-box',
@@ -12,7 +14,10 @@ export class TextBoxComponent implements OnInit {
   @Input() caseInsensitive: boolean;
   currentDictionary;
 
-  constructor() { }
+  constructor(
+    private clipboard: Clipboard,
+    private messageService: MessageService
+    ) { }
 
   ngOnInit(): void {
     this.currentDictionary = {...this.dictionary};
@@ -47,6 +52,16 @@ export class TextBoxComponent implements OnInit {
 
   updateDictionary(): void {
     this.currentDictionary = {...this.dictionary};
+  }
+
+  copyContent(){
+    if (!this.content || !this.content.trim().length) { return; };
+    this.clipboard.copy(this.content);
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Copied',
+      detail: 'Proof copied to clipboard.'
+    });
   }
 
 }
