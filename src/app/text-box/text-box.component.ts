@@ -54,7 +54,7 @@ export class TextBoxComponent implements OnInit {
     this.currentDictionary = {...this.dictionary};
   }
 
-  copyContent(){
+  copyContent() {
     if (!this.content || !this.content.trim().length) { return; };
     this.clipboard.copy(this.content);
     this.messageService.add({
@@ -62,6 +62,10 @@ export class TextBoxComponent implements OnInit {
       summary: 'Copied',
       detail: 'Proof copied to clipboard.'
     });
+  }
+
+  resetContent() {
+    this.content = '';
   }
 
 }
