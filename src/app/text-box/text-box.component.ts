@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TextBoxComponent implements OnInit {
 
   content: string;
-  @Input() symbols;
+  @Input() dictionary;
 
   constructor() { }
 
@@ -23,7 +23,7 @@ export class TextBoxComponent implements OnInit {
 
   replaceShortcuts(text: string): string {
     const replacement = text.replace(/not|and|or|then|iff/gi, match => {
-      const symbol = this.symbols[match.toUpperCase()];
+      const symbol = this.dictionary[match.toUpperCase()];
       if (!symbol) { return match; }
       return symbol;
     });
