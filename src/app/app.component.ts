@@ -12,8 +12,6 @@ interface Operator {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'logic-shortcuts';
-
   operators: Operator[] = [
     {
       name: 'negation',
@@ -43,7 +41,6 @@ export class AppComponent implements OnInit {
   ];
 
   dictionary = {};
-  cols;
 
   ngOnInit(): void {
     this.operators.forEach(operator => {
