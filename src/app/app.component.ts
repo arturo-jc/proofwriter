@@ -56,6 +56,11 @@ export class AppComponent implements OnInit {
       symbols: ['∃']
     },
     {
+      name: 'therefore',
+      abbreviation: 'tfr',
+      symbols: ['∴ ']
+    },
+    {
       name: 'box operator',
       abbreviation: 'nec',
       symbols: ['□ ']
