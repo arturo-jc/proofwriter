@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Operator {
+  name: string;
+  abbreviation: string;
+  options: string[];
+};
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'logic-shortcuts';
 
-  operators = [
+  operators: Operator[] = [
     {
       name: 'negation',
       abbreviation: 'NOT',
