@@ -15,27 +15,27 @@ export class AppComponent implements OnInit {
   operators: Operator[] = [
     {
       name: 'negation',
-      abbreviation: 'NOT',
+      abbreviation: 'not',
       symbols: ['¬', '˜', '!']
     },
     {
       name: 'conjunction',
-      abbreviation: 'AND',
+      abbreviation: 'and',
       symbols: ['· ', '∧ ', '& ']
     },
     {
       name: 'disjunction',
-      abbreviation: 'OR',
+      abbreviation: 'or',
       symbols: ['∨ ', '+ ', '∥ ']
     },
     {
       name: 'implication',
-      abbreviation: 'THEN',
+      abbreviation: 'then',
       symbols: ['⊃ ', '→ ']
     },
     {
       name: 'equivalence',
-      abbreviation: 'IFF',
+      abbreviation: 'iff',
       symbols: ['≡ ','↔ ']
     }
   ];

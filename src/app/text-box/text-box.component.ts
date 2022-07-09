@@ -23,7 +23,7 @@ export class TextBoxComponent implements OnInit {
 
   substituteSymbols(text: string): string {
     const replacement = text.replace(/not|and|or|then|iff/gi, match => {
-      const symbol = this.dictionary[match.toUpperCase()];
+      const symbol = this.dictionary[match.toLowerCase()];
       if (!symbol) { return match; }
       return symbol;
     });
