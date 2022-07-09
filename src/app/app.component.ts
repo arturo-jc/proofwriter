@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 interface Operator {
   name: string;
   abbreviation: string;
-  options: string[];
+  symbols: string[];
 };
 
 @Component({
@@ -18,36 +18,36 @@ export class AppComponent implements OnInit {
     {
       name: 'negation',
       abbreviation: 'NOT',
-      options: ['¬', '˜', '!']
+      symbols: ['¬', '˜', '!']
     },
     {
       name: 'conjunction',
       abbreviation: 'AND',
-      options: ['· ', '∧ ', '& ']
+      symbols: ['· ', '∧ ', '& ']
     },
     {
       name: 'disjunction',
       abbreviation: 'OR',
-      options: ['∨ ', '+ ', '∥ ']
+      symbols: ['∨ ', '+ ', '∥ ']
     },
     {
       name: 'implication',
       abbreviation: 'THEN',
-      options: ['⊃ ', '→ ']
+      symbols: ['⊃ ', '→ ']
     },
     {
       name: 'equivalence',
       abbreviation: 'IFF',
-      options: ['≡ ','↔ ']
+      symbols: ['≡ ','↔ ']
     }
-  ]
+  ];
 
   dictionary = {};
   cols;
 
   ngOnInit(): void {
     this.operators.forEach(operator => {
-      this.dictionary[operator.abbreviation] = operator.options[0];
+      this.dictionary[operator.abbreviation] = operator.symbols[0];
     })
   }
 }

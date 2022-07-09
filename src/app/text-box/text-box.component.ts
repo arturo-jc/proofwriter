@@ -17,11 +17,11 @@ export class TextBoxComponent implements OnInit {
 
   onInput(): void {
     setTimeout(() => {
-      this.content = this.replaceShortcuts(this.content);
+      this.content = this.substituteSymbols(this.content);
     }, 200);
   }
 
-  replaceShortcuts(text: string): string {
+  substituteSymbols(text: string): string {
     const replacement = text.replace(/not|and|or|then|iff/gi, match => {
       const symbol = this.dictionary[match.toUpperCase()];
       if (!symbol) { return match; }
