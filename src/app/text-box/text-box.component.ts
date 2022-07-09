@@ -36,7 +36,8 @@ export class TextBoxComponent implements OnInit {
     if (!this.content || !this.content.trim().length) { return; };
     Object.keys(this.currentDictionary).forEach(key => {
       if (this.currentDictionary[key] !== this.dictionary[key]){
-        this.content = this.content.replace(this.currentDictionary[key], this.dictionary[key]);
+        const symbolRegExp = new RegExp(this.currentDictionary[key], 'gi');
+        this.content = this.content.replace(symbolRegExp, this.dictionary[key]);
         this.currentDictionary[key] = this.dictionary[key];
         return;
       }

@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     {
       name: 'disjunction',
       abbreviation: 'or',
-      symbols: ['∨ ', '+ ', '∥ ']
+      symbols: ['∨ ', '∥ ']
     },
     {
       name: 'implication',
