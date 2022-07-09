@@ -29,7 +29,7 @@
             </p-table>
             <div class="p-grid p-ai-center vertical-container p-mt-4">
                 <div class="p-col-fixed" style="width: min-content;">
-                    <p-inputSwitch [(ngModel)]="updateAfterSelect" inputId="update-after-select"></p-inputSwitch>
+                    <p-inputSwitch [(ngModel)]="updateAfterSelect" inputId="update-after-select" (onChange)="textBox.updateDictionary()"></p-inputSwitch>
                 </div>
                 <div class="p-col">
                     <label for="update-after-select">Update content after selecting a new symbol</label>

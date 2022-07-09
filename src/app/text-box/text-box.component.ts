@@ -44,4 +44,8 @@ export class TextBoxComponent implements OnInit {
     });
   }
 
+  updateDictionary(): void {
+    this.currentDictionary = {...this.dictionary};
+  }
+
 }
