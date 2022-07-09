@@ -1,11 +1,11 @@
-<div class="p-grid">
+<div class="p-grid p-ai-stretch vertical-container">
     <div class="p-col">
-        <p-card  header="ProofWriter">
+        <p-card [style]="{'height': '100%'}" header="ProofWriter">
             <app-text-box [dictionary]="dictionary"></app-text-box>
         </p-card>
     </div>
     <div class="p-col">
-        <p-card header="Configuration">
+        <p-card [style]="{'height': '100%'}" header="Settings">
             <p-table [value]="operators">
                 <ng-template pTemplate="header">
                     <tr>
@@ -19,11 +19,14 @@
                         <td>{{ operator.name | titlecase }}</td>
                         <td>{{ operator.abbreviation }}</td>
                         <td>
-                            <p-dropdown [options]="operator.symbols" [(ngModel)]="dictionary[operator.abbreviation]" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-dropdown>
+                            <p-dropdown [options]="operator.symbols" [(ngModel)]="dictionary[operator.abbreviation]"></p-dropdown>
                         </td>
                     </tr>
                 </ng-template>
             </p-table>
+            <p class="p-mt-5 p-mb-0">
+                * All abbreviations are case-insensitive.
+            </p>
         </p-card>
     </div>
 </div>
