@@ -18,8 +18,11 @@
                     <tr>
                         <td>{{ operator.name | titlecase }}</td>
                         <td>{{ operator.abbreviation }}</td>
-                        <td>
+                        <td *ngIf="operator.symbols.length > 1">
                             <p-dropdown [options]="operator.symbols" [(ngModel)]="dictionary[operator.abbreviation]"></p-dropdown>
+                        </td>
+                        <td *ngIf="!(operator.symbols.length > 1)">
+                            {{ operator.symbols[0] }}
                         </td>
                     </tr>
                 </ng-template>
@@ -27,6 +30,11 @@
             <p class="p-mt-5 p-mb-0">
                 * All abbreviations are case-insensitive.
             </p>
+        </p-card>
+    </div>
+    <div class="p-col-12">
+        <p-card class="p-text-center">
+            created by <a href="https://arturojc.com/" target="_blank">Arturo Javier-Castellanos</a> &copy; {{ currentDate | date:'y' }}
         </p-card>
     </div>
 </div>

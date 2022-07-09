@@ -37,10 +37,32 @@ export class AppComponent implements OnInit {
       name: 'equivalence',
       abbreviation: 'iff',
       symbols: ['≡ ','↔ ']
-    }
+    },
+    {
+      name: 'universal quantifier',
+      abbreviation: 'all',
+      symbols: ['∀']
+    },
+    {
+      name: 'existential quantifier',
+      abbreviation: 'some',
+      symbols: ['∃']
+    },
+    {
+      name: 'box operator',
+      abbreviation: 'nec',
+      symbols: ['□ ']
+    },
+    {
+      name: 'diamond operator',
+      abbreviation: 'pos',
+      symbols: ['◇ ']
+    },
   ];
 
   dictionary = {};
+
+  currentDate = Date.now();
 
   ngOnInit(): void {
     this.operators.forEach(operator => {
