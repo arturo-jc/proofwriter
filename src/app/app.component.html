@@ -33,18 +33,18 @@
             <p-fieldset legend="Preferences" toggleable="true" [collapsed]="true" styleClass="p-mt-4">
                 <div class="p-grid p-ai-center vertical-container">
                     <div class="p-col-fixed" style="width: min-content;">
-                        <p-inputSwitch [(ngModel)]="updateAfterSelect" inputId="update-after-select" (onChange)="textBox.updateDictionary()"></p-inputSwitch>
+                        <p-inputSwitch [(ngModel)]="caseInsensitive" inputId="case-insensitive"></p-inputSwitch>
                     </div>
                     <div class="p-col">
-                        <label for="update-after-select">Update content after selecting a new symbol</label>
+                        <label for="case-insensitive">Case-insensitive abbreviations</label>
                     </div>
                 </div>
                 <div class="p-grid p-ai-center vertical-container">
                     <div class="p-col-fixed" style="width: min-content;">
-                        <p-inputSwitch [(ngModel)]="caseInsensitive" inputId="case-insensitive"></p-inputSwitch>
+                        <p-inputSwitch [(ngModel)]="updateAfterSelect" inputId="update-after-select" (onChange)="textBox.updateDictionary()"></p-inputSwitch>
                     </div>
                     <div class="p-col">
-                        <label for="case-insensitive">Make abbreviations case-insensitive</label>
+                        <label for="update-after-select">Update content after selecting a new symbol</label>
                     </div>
                 </div>
             </p-fieldset>
