@@ -27,9 +27,14 @@
                     </tr>
                 </ng-template>
             </p-table>
-            <p class="p-mt-5 p-mb-0">
-                * All abbreviations are case-insensitive.
-            </p>
+            <div class="p-grid p-ai-center vertical-container p-mt-4">
+                <div class="p-col-fixed" style="width: min-content;">
+                    <p-inputSwitch [(ngModel)]="updateAfterSelect" inputId="update-after-select"></p-inputSwitch>
+                </div>
+                <div class="p-col">
+                    <label for="update-after-select">Update content after selecting a new symbol</label>
+                </div>
+            </div>
         </p-card>
     </div>
     <div class="p-col-12">

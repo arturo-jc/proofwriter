@@ -80,6 +80,7 @@ export class AppComponent implements OnInit {
     if (this.updateAfterSelect){
       this.textBox.updateSymbols();
     }
+    // Update current dictionary anyways (add a return above)
   }
 
   // Update textbox's current dictionary if settings change
